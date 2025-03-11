@@ -14,7 +14,7 @@ export default async function handler(
 ) {
   try {
     const backendResponse = await fetch(
-      "http://localhost:3000/tamara/create-order", // Changed to 3001 based on your previous message
+      "https://cultural-enrika-guestna-43d7043d.koyeb.app/tamara/create-order", // Changed to 3001 based on your previous message
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -27,7 +27,8 @@ export default async function handler(
       );
     }
 
-    const data = (await backendResponse.json()) as TamaraOrderResponse;
+    const data = await backendResponse.json();
+
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({
