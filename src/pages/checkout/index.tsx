@@ -9,11 +9,11 @@ export default function Checkout() {
       const res = await fetch("/api/create-tamara-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: 10000 }),
+        body: JSON.stringify({}),
       });
 
       const { url } = await res.json();
-      window.location.href = url;
+      window.location.href = url.checkout_url;
     } finally {
       setLoading(false);
     }
