@@ -18,14 +18,14 @@ export default function AppleCallback() {
         }
 
         // Optional: Validate state parameter
-        const storedState = sessionStorage.getItem('apple_oauth_state');
+        const storedState = sessionStorage.getItem("apple_oauth_state");
         if (state !== storedState) {
           throw new Error("Invalid state parameter");
         }
 
         // Send code to NestJS backend
         const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL}/auth/apple`,
+          `https://cultural-enrika-guestna-43d7043d.koyeb.app/auth/apple`,
           { code }
         );
 
@@ -35,7 +35,7 @@ export default function AppleCallback() {
         // Store token
         Cookies.set("auth_token", token, {
           secure: process.env.NODE_ENV === "production",
-          sameSite: "strict"
+          sameSite: "strict",
         });
 
         // Redirect to profile
