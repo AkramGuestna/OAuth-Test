@@ -11,8 +11,8 @@ export default function LoginApplePage() {
       const params = new URLSearchParams({
         client_id: process.env.NEXT_PUBLIC_APPLE_CLIENT_ID!,
         redirect_uri: process.env.NEXT_PUBLIC_APPLE_REDIRECT_URI!,
-        response_type: 'code id_token',
-        scope: 'openid email name',
+        response_type: 'code',
+        scope: 'email name',
         response_mode: 'query',
         state: generateState()
       });
