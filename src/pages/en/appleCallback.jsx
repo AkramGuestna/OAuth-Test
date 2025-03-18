@@ -6,11 +6,9 @@ import Cookies from "js-cookie";
 export default function AppleCallback() {
   const router = useRouter();
 
-  // في ملف AppleCallback
   useEffect(() => {
     const handleAppleCallback = async () => {
       try {
-        // انتظر حتى يصبح الـ router جاهزًا (مهم في Next.js)
         if (!router.isReady) return;
 
         const { code } = router.query;
@@ -19,13 +17,6 @@ export default function AppleCallback() {
           throw new Error("Authorization code or state missing");
         }
 
-        // // تحقق من تطابق الـ state مع المخزن
-        // const storedState = sessionStorage.getItem("apple_oauth_state");
-        // if (state !== storedState) {
-        //   throw new Error("Invalid state parameter");
-        // }
-
-        // أرسل الـ code إلى الخادم
         const response = await axios.post(
           `https://cultural-enrika-guestna-43d7043d.koyeb.app/auth/apple`,
           { code }
@@ -46,6 +37,6 @@ export default function AppleCallback() {
     };
 
     handleAppleCallback();
-  }, [router, router.isReady]); // <-- تأكد من إضافة router.isReady هنا
+  }, [router, router.isReady]);
   return <div>Processing Apple login...</div>;
 }
