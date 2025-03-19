@@ -21,7 +21,7 @@ export default function Checkout() {
           body: JSON.stringify({
             paymentMethod: "TAMARA",
             trip: "677d07071f7657cd73e507fa",
-            bookingDay: "2025-03-15",
+            bookingDay: "2025-06-10",
             userInfo: {
               name: "Ahmed Mostafa",
               email: email,
