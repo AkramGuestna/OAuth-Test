@@ -36,11 +36,8 @@ export default function Checkout() {
             redirectUrl: "https://guestna.vercel.app/ar/bookingStatus",
             isSMSupdates: false,
             tamaraUserInfo: {
-              city: "Ryiad",
-              line: "line1",
-              region: "region1",
+              bookingPhone: "500000000",
               country: "SA",
-              paymentType: "PAY_BY_INSTALMENTS",
             },
           }),
         }
