@@ -25,7 +25,7 @@ export default function Checkout() {
             userInfo: {
               name: "Ahmed Mostafa",
               email: email,
-              phone: "500000000",
+              phone: "+966500000000",
             },
             targetAudiences: [
               {
@@ -36,7 +36,7 @@ export default function Checkout() {
             redirectUrl: "https://guestna.vercel.app/ar/bookingStatus",
             isSMSupdates: false,
             tamaraUserInfo: {
-              bookingPhone: "500000000",
+              phone: "500000000",
               country: "SA",
             },
           }),
