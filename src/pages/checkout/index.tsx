@@ -67,11 +67,13 @@ export default function Checkout() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-4 py-2 text-[#2D3748] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fbdfcb] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            style={{ backgroundColor: "#fbdfcb" }}
-          >
-            {loading ? "Processing..." : "Tamara Pay"}
-          </button>
+            className="w-full h-8 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fbdfcb] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors bg-no-repeat bg-center"
+            style={{
+              backgroundImage:
+                "url('https://cdn.tamara.co/widget-v2/assets/tamara-grad-en.ac5bf912.svg')",
+              backgroundSize: "contain", // Show full image without crop
+            }}
+          ></button>
         </div>
       </form>
     </div>
