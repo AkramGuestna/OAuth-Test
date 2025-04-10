@@ -1,3 +1,4 @@
+import TamaraWidget from "@/componnents/TamaraWidget";
 import { useState, useRef, FormEvent } from "react";
 
 export default function Checkout() {
@@ -51,9 +52,20 @@ export default function Checkout() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 space-y-8">
+      <div className="w-full max-w-md space-y-4">
+        <TamaraWidget
+          price={250}
+          publicKey="f2f0be48-09de-47d7-aea4-257480336aad"
+          lang="en"
+          currency="SAR"
+          paymentType="installment"
+        />
+      </div>
       <form onSubmit={initiatePayment} className="w-full max-w-xs space-y-4">
         <div className="space-y-2">
+          {/* <TamaraWidget amount={1000} currency="SAR" /> */}
+
           <input
             ref={inputRef}
             type="email"
@@ -67,7 +79,7 @@ export default function Checkout() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full h-8 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fbdfcb] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors bg-no-repeat bg-center"
+            className=" h-10 px-12 bg-no-repeat bg-center mx-auto block"
             style={{
               backgroundImage:
                 "url('https://cdn.tamara.co/widget-v2/assets/tamara-grad-en.ac5bf912.svg')",
